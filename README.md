@@ -36,3 +36,14 @@ $ python manage.py runserver
 Once the server is hosted, head over to http://127.0.0.1:8000/todos for the App.
 
 Cheers and Happy Coding :)
+
+git setup
+virtualenv -p python env
+source env/bin/activate
+
+cd django-todoapp
+pip install django
+pip freeze > requirements.txt
+git checkout -b feature/deploy-app
+git add .git commit -m "message"
+
