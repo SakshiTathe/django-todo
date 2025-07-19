@@ -58,4 +58,5 @@ curl ifconfig.me          // Ip address of Try accessing your app from EC2 itsel
 nohup python3 manage.py runserver 0.0.0.0:8002 &    run in deatched mode
 
  lsof -i:8001    list the services where all run on given port
- 
+
+ kill -9 process id 
