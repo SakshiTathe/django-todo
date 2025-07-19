@@ -60,3 +60,36 @@ nohup python3 manage.py runserver 0.0.0.0:8002 &    run in deatched mode
  lsof -i:8001    list the services where all run on given port
 
  kill -9 process id 
+
+
+ go to ssh ec2 instance 
+ create sudo docker pull jenkins/jenkins
+ sudo docker run -d -p 80:8080 jenkins:latest
+
+ 
+cd /home/ubuntu/projects/django-todo
+docker build . -t todo-dev
+docker run -d -p 8002:8002 todo-dev
+check repo         git remote -v
+git remote set-url origin our url
+check git status
+git add .
+jenkines run on port 8080
+
+git client  plugin 
+configure system
+scroll down github
+add github server
+add credentials
+secreate text is personal access token scope(global)   id jenkins-github-cicd
+add 
+it will show you your git account
+create CICD pipeline
+source code
+gie repo url
+give branch name  from github
+build step 
+execute shell
+sudo docker build . -t todo-app
+sudo docker run -p 8000:8000 -d todo-app
+lsof -i:8000
