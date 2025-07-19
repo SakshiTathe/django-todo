@@ -93,3 +93,53 @@ execute shell
 sudo docker build . -t todo-app
 sudo docker run -p 8000:8000 -d todo-app
 lsof -i:8000
+make master server on ec2 
+action -> image and templeates -> launch more like this  make instances 3
+open master terminal 
+sudo apt get update
+sudo apt install ansible
+cd .ssh 
+vim ansiblekey
+paste key
+sudo ssh -i ~/.ssh/ansiblekey ubuntu@Ip of instance server3
+cat /etc/ansible/hosts
+mkdir ansible
+cd ansible/
+vim hosts
+[servers]
+server1 ansible_host=ip of server1
+server2 ansible_host=ip of server2
+server3 ansible_host=ip of server3
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible pwd
+ansible-inventory --list -y path -i host path is 
+cd ..
+cd .ssh 
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/ansible_key
+ansible all -m ping -i inventory_path --private-key=~/.ssh/ansible_key
+
+ansible all -a 'free -h' -i inventory_path --private-key=~/.ssh/ansible_key
+# servers from inventory_path this inventory  using --private-key=~/.ssh/ansible_key this private key  show disk space
+mkdir playblooks
+cd playbooks
+vim createbook.yml
+---
+name: creating the file
+hosts: all
+become: true
+tasks:
+  - name: creating file
+    File:
+    path: /home/ubuntu/myfiles.txt
+    state:touch
+ansible-playbook createbook.yml -i inventory_path --private-key=~/.ssh/ansible_key
+sudo usermod -aG docker $USER && newgrp docker
+minikube start --driver=docker
+sudo snap install kubectl --classic
+
+
+
+
+
