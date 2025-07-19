@@ -55,4 +55,7 @@ git add .git commit -m "message"
 
 curl ifconfig.me          // Ip address of Try accessing your app from EC2 itself
 
+nohup python3 manage.py runserver 0.0.0.0:8002 &    run in deatched mode
 
+ lsof -i:8001    list the services where all run on given port
+ 
