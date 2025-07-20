@@ -139,7 +139,36 @@ sudo usermod -aG docker $USER && newgrp docker
 minikube start --driver=docker
 sudo snap install kubectl --classic
 
+push the push on docker hub
+make pod.yml
+kubectl apply -f pod.yml
+kubectl get pods 
+kubectl get pods -o wide 
+kubectl get deployments
+minikube ssh
+curl -l http//: 
+ auto healing using deployment kind
+kubectl apply -f depoly.yml
+if delete it will create new pod
+make replicas for load balancing
 
+1. Built Kubernetes Cluster on AWS from Scratch with Minukube
+2. Setup and Managed Docker Containers for Django and React Applications into Kubernetes Pods.
+3. Managed Deployment ,replication,autohealing, auto scaling, for kubernets clusters
+4. 
+docker build -t dockerhubid/imagename:tag 
+docker run -d -p 8000:8000 imagename
+make kubernatives pods
+in which container name =
+and image name is from docker hub dockerhubid/imagename:tag 
+push the image on docker hub
 
+service.yml
+kubectl get svc
+minicube service todo-service --url
+curl -l url
+sudo vim etc/hosts
+paste IP name
+curl -l name.com:8000
 
 
