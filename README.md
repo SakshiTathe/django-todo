@@ -172,7 +172,12 @@ paste IP name
 curl -l name.com:8000
 
 achivement: Reduced downtime by 75% on production Environments
-
+1. Setup Kubernetes Cluster using kubeadm
+2. Deploy the Taskmaster Micro-service
+3. Expose the service to Postman
+4. Integrate Persistent Volume and Persistent Volume Claim
+5. Deploy Mongo DB
+6. Intergrate Micro-services/ Troubleshoot
 ---------------------------------------- Kubeadm Installation ------------------------------------------ 
 
 -------------------------------------- Both Master & Worker Node ---------------------------------------
@@ -205,7 +210,6 @@ kubeadm init
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
 kubeadm token create --print-join-command
-  
 
 ------------------------------------------- Worker Node ------------------------------------------------ 
 sudo su
@@ -215,7 +219,12 @@ kubeadm reset pre-flight checks
 #To verify cluster connection  
 ---------------------------------------on Master Node-----------------------------------------
 kubectl get nodes 
-
+clone the application on master
+kubectl apply -f podfiles.yml
+1. deployment
+2. scale --replica=3
+3. service: NodePort
+4. make persistent volume for database
 # worker
 # kubeadm join 172.31.84.66:6443 --token n4tfb4.grmew1s1unug0get     --discovery-token-ca-cert-hash sha256:c3fda2eaf5960bed4320d8175dc6a73b1556795b1b7f5aadc07642ed85c51069 --v=5
 # kubeadm reset pre-flight checks
